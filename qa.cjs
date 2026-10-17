@@ -13,9 +13,11 @@ const fs=require('fs');
   const images=await page.locator('img').evaluateAll(imgs=>imgs.filter(im=>!im.complete||!im.naturalWidth).map(im=>im.src));
   await page.screenshot({path:'qa/'+route+'-desktop.png',fullPage:true});
   await page.screenshot({path:'dist/assets/'+route+'-preview.jpg',type:'jpeg',quality:85});
-  const nav=page.getByRole('navigation',{name:'Products and services',exact:true});
+  const nav=page.getByRole('navigation',{name:route==='dark'?'Explore our products and services':'Products and services',exact:true});
+  const layout=await page.evaluate(()=>({switcher:!!document.querySelector('.concept-bar'),productBar:!!document.querySelector('.product-navigation'),productColumns:document.querySelector('.profile-grid')?getComputedStyle(document.querySelector('.profile-grid')).gridTemplateColumns.split(' ').length:null,phoneSize:getComputedStyle(document.querySelector('.header-phone')).fontSize,phoneWeight:getComputedStyle(document.querySelector('.header-phone')).fontWeight,logoGap:document.querySelector('.primary-nav').getBoundingClientRect().left-document.querySelector('.brand').getBoundingClientRect().right}));
+  results.push({route,...layout});
   for(const label of ['Flashings','Rainwater Systems','Louvre Systems','Architectural Features','Gutter Systems','Rainscreen Panels']){
-   await nav.getByRole('button',{name:label,exact:false}).click();
+   await nav.getByRole('button',{name:new RegExp(label,'i')}).click();
    await page.getByRole('dialog').waitFor({state:'visible'});
    const title=await page.locator('#detail-title').textContent();
    results.push({route,navigation:label,detail:title});
