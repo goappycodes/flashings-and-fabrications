@@ -1,0 +1,21 @@
+{
+  "brief": "../FFS_Website_Rebuild_Discovery_Brief.pdf",
+  "brief_date": "2026-10-16",
+  "branding": "Existing FFS logo retained. Navy/blue-green and grey visually sampled; exact brand values await original files.",
+  "website_sources": [
+    "https://www.flashings-and-fabrications.co.uk/",
+    "https://www.flashings-and-fabrications.co.uk/contact-us/",
+    "https://www.flashings-and-fabrications.co.uk/about-us/",
+    "https://www.flashings-and-fabrications.co.uk/northbrook-college/",
+    "https://www.flashings-and-fabrications.co.uk/amex-stadium/"
+  ],
+  "existing_assets": "dist/assets/logo.png and the product/project JPEGs derive from the existing company website. Project originals and usage rights should be confirmed before a public launch.",
+  "generated_asset": {
+    "path": "dist/assets/workshop-concept.png",
+    "tool": "Built-in image_gen.imagegen; no fallback CLI",
+    "purpose": "Illustrative workshop photography direction, explicitly labelled in both concepts. Does not depict FFS premises, staff or machinery.",
+    "prompt": "Use case: photorealistic-natural. Create one high-resolution 3:2 landscape editorial photograph for a British sheet-metal fabricator website concept. It is illustrative, not a depiction of a specific real business. An authentic, tidy small-to-medium industrial workshop in West Sussex, England. Foreground crisp long folded silver metal flashing profiles on a sturdy workbench, rich tactile brushed zinc and aluminium surfaces, angular folds catching soft natural side light. Behind them a substantial press brake and a single adult fabricator wearing proper safety eyewear and dark blue workwear, slightly out of focus, normal human scale. Muted navy machinery, natural concrete grey, a subtle restrained burgundy detail. Daylight through factory windows, honest working atmosphere, modern premium documentary photography. Composition: profiles lead from lower left towards mid-right, machine and worker deeper in frame, shallow depth of field but credible workshop detail. No sparks, no dramatic molten metal, no welding, no futuristic robots, no cavernous multinational factory, no hard hat indoors without need, no signage, no text, no logos. This should communicate precise workmanship and an approachable local company."
+  },
+  "verification": "qa/results.json: desktop 1440px, mobile 390px and 320px; service modal, mobile menu and local form confirmation; no broken images, no horizontal overflow, no JavaScript errors.",
+  "scope": "Two responsive homepage design directions. Forms demonstrate the journey locally; they do not submit data or files. No change made to the existing company website."
+}
