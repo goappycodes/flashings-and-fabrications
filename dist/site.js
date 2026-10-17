@@ -4,6 +4,7 @@ menu.addEventListener('click', () => { const opened=menu.getAttribute('aria-expa
 mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobile.hidden=true;menu.setAttribute('aria-expanded','false');}));
 const dialog = document.querySelector('.detail-dialog');
 document.querySelectorAll('[data-detail]').forEach(button=>button.addEventListener('click',()=>{
+ if(mobile.contains(button)){mobile.hidden=true;menu.setAttribute('aria-expanded','false');}
  const d=window.FFS_DETAILS[button.dataset.detail];
  const content=document.querySelector('.dialog-content');
  content.replaceChildren();

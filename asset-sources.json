@@ -2,6 +2,9 @@
   "brief": "../FFS_Website_Rebuild_Discovery_Brief.pdf",
   "brief_date": "2026-10-16",
   "branding": "Existing FFS logo retained. Navy/blue-green and grey visually sampled; exact brand values await original files.",
+  "typography": "Noto Sans in both directions, with five shared size roles: small supporting text, body/navigation, subheading, section heading and hero heading. Responsive size values adapt to viewport width.",
+  "logo_variant": "dist/assets/logo-white.svg is an exact native SVG reversal of the original logo, with white foreground and transparent background. A generated image attempt was discarded because it did not preserve the artwork cleanly.",
+  "direction_02": "Trade bold uses a photographic workshop hero, custom engineering profile diagrams, staggered project imagery and an open enquiry form layout. It is a distinct design rather than a dark theme of direction 01.",
   "website_sources": [
     "https://www.flashings-and-fabrications.co.uk/",
     "https://www.flashings-and-fabrications.co.uk/contact-us/",

@@ -13,7 +13,15 @@ const fs=require('fs');
   const images=await page.locator('img').evaluateAll(imgs=>imgs.filter(im=>!im.complete||!im.naturalWidth).map(im=>im.src));
   await page.screenshot({path:'qa/'+route+'-desktop.png',fullPage:true});
   await page.screenshot({path:'dist/assets/'+route+'-preview.jpg',type:'jpeg',quality:85});
-  await page.getByRole('button',{name:/01 Metal flashings/}).click();
+  const nav=page.getByRole('navigation',{name:'Products and services',exact:true});
+  for(const label of ['Flashings','Rainwater Systems','Louvre Systems','Architectural Features','Gutter Systems','Rainscreen Panels']){
+   await nav.getByRole('button',{name:label,exact:false}).click();
+   await page.getByRole('dialog').waitFor({state:'visible'});
+   const title=await page.locator('#detail-title').textContent();
+   results.push({route,navigation:label,detail:title});
+   await page.getByRole('button',{name:'Close details'}).click();
+  }
+  await nav.getByRole('button',{name:'Flashings',exact:false}).click();
   await page.getByRole('dialog').waitFor({state:'visible'});
   await page.getByRole('button',{name:'Close details'}).click();
   await page.locator('input[name=name]').fill('Design Review');

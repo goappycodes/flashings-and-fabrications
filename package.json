@@ -1,0 +1,8 @@
+{
+  "name": "flashings-and-fabrications-design-directions",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  }
+}
