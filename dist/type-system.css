@@ -21,3 +21,5 @@ small,.utility,.utility span,.utility a,.concept-bar,.concept-bar a,.concept-bar
 @media(min-width:1101px){.trade .profile-grid{grid-template-columns:repeat(8,minmax(0,1fr));gap:10px}.trade .profile-grid button{flex-direction:column;align-items:flex-start;gap:12px;min-height:178px;padding:19px 14px 25px}.trade .profile-grid svg{width:66px;height:57px}.trade .profile-grid button>span{overflow-wrap:normal;line-height:1.4}.trade-intro{padding-block:45px 50px}.trade-intro>h2{margin-bottom:28px}}
 @media(max-width:1100px){.site-header .header-phone{font-size:28px!important;font-weight:800!important}}
 @media(max-width:650px){.site-header .header-phone{font-size:24px!important}.site-header .brand{margin-right:10px}}
+@media(min-width:1101px){.wrap{width:min(1680px,calc(100% - 80px))}.review-main,.review-header{max-width:1760px;padding-left:40px;padding-right:40px}}
+@media(min-width:1101px){.review .direction-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}.review .direction-info h2{font-size:20px!important}.review .direction>.button{gap:15px;padding-inline:18px}}

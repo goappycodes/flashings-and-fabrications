@@ -1,16 +1,17 @@
 # Flashings & Fabrications
 
-Two responsive homepage design directions for the Littlehampton sheet-metal fabricator.
+Three responsive homepage design directions for the Littlehampton sheet-metal fabricator.
 
 - `dist/light.html`: Precision workshop, with a restrained photographic layout.
 - `dist/dark.html`: Trade bold, with a workshop hero, product-profile navigation and architectural project features.
+- `dist/bold.html`: Built for the detail, with Montserrat 900 headings, an asymmetric product-photo hero and an editorial service list.
 - `dist/index.html`: comparison and review notes.
 
-Both use Noto Sans, explicit product navigation, verified local contact details, project examples and demonstration enquiry forms. Forms validate in the browser and do not send data or files.
+The original two use Noto Sans. The third adds Montserrat 900 for major headings. All retain explicit service choices, verified local contact details, project examples and demonstration enquiry forms. Desktop containers reach 1,680px on larger screens. Forms validate in the browser and do not send data or files.
 
 ## Development
 
-Run `npm run build` with Node.js to regenerate the HTML from `build.mjs` and `direction-b.mjs`. Styles and browser behaviour live in `dist/styles.css`, `dist/type-system.css` and `dist/site.js`.
+Run `npm run build` with Node.js to regenerate the HTML from `build.mjs`, `build-third.mjs`, `direction-b.mjs` and `direction-c.mjs`. Styles and browser behaviour live in `dist/styles.css`, `dist/type-system.css`, `dist/direction-c.css` and `dist/site.js`.
 
 For a local preview, serve `dist` with any static HTTP server. For example, `python -m http.server 8087 --directory dist`.
 

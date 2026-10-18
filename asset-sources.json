@@ -5,6 +5,13 @@
   "typography": "Noto Sans in both directions, with five shared size roles: small supporting text, body/navigation, subheading, section heading and hero heading. Responsive size values adapt to viewport width.",
   "logo_variant": "dist/assets/logo-white.svg is an exact native SVG reversal of the original logo, with white foreground and transparent background. A generated image attempt was discarded because it did not preserve the artwork cleanly.",
   "direction_02": "Trade bold uses a photographic workshop hero, custom engineering profile diagrams, staggered project imagery and an open enquiry form layout. It is a distinct design rather than a dark theme of direction 01.",
+  "direction_03": {
+    "page": "dist/bold.html",
+    "design": "Montserrat 900 headings, an asymmetric material photograph, an editorial service list with square thumbnails, capability rows and a different project sequence. Its utility bar is removed and an eight-service navigation row sits below the header.",
+    "image": "dist/assets/folded-metal-concept.png",
+    "tool": "Built-in image_gen.imagegen",
+    "prompt": "Photorealistic editorial industrial product photograph, landscape 3:2 composition, for a bespoke British sheet-metal fabricator website. Sculptural arrangement of four accurately folded long aluminium and galvanised steel flashing profiles on a lightly worn charcoal workbench. Strong crisp 90-degree folded edges, varied L and Z section profiles, detailed satin metal texture. Tight three-quarter close view with some diagonal profiles leading from foreground left to upper right, meaningful material scale and real fabrication detail. Background is a modest clean workshop in soft focus, no people, no logos, no text. Palette silver, deep navy blue and charcoal, natural daylight, tactile honest materials, contemporary architectural magazine photograph, understated precision rather than glossy futuristic factory. Leave the right fifth with dark subtle workshop detail so image can crop, primary metal detail dominates center-left. No sparks, robots, giant multinational factory, melted metal, fake lettering or dramatic orange lighting. This is illustrative photography direction, not a claimed depiction of any real premises."
+  },
   "website_sources": [
     "https://www.flashings-and-fabrications.co.uk/",
     "https://www.flashings-and-fabrications.co.uk/contact-us/",

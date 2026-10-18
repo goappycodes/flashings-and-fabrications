@@ -6,14 +6,14 @@ const fs=require('fs');
  const errors=[];const results=[];
  const page=await browser.newPage({viewport:{width:1440,height:1050},deviceScaleFactor:1});
  page.on('pageerror',e=>errors.push(e.message));
- for(const route of ['light','dark']){
+ for(const route of ['light','dark','bold']){
   const res=await page.goto('http://127.0.0.1:8087/'+route+'.html',{waitUntil:'networkidle'});
   await page.evaluate(()=>document.fonts.ready);
   await page.locator('img').evaluateAll(imgs=>Promise.all(imgs.map(im=>{im.loading='eager';return im.decode().catch(()=>{});} )));
   const images=await page.locator('img').evaluateAll(imgs=>imgs.filter(im=>!im.complete||!im.naturalWidth).map(im=>im.src));
   await page.screenshot({path:'qa/'+route+'-desktop.png',fullPage:true});
   await page.screenshot({path:'dist/assets/'+route+'-preview.jpg',type:'jpeg',quality:85});
-  const nav=page.getByRole('navigation',{name:route==='dark'?'Explore our products and services':'Products and services',exact:true});
+  const nav=page.getByRole('navigation',{name:route==='light'?'Products and services':'Explore our products and services',exact:true});
   const layout=await page.evaluate(()=>({switcher:!!document.querySelector('.concept-bar'),productBar:!!document.querySelector('.product-navigation'),productColumns:document.querySelector('.profile-grid')?getComputedStyle(document.querySelector('.profile-grid')).gridTemplateColumns.split(' ').length:null,phoneSize:getComputedStyle(document.querySelector('.header-phone')).fontSize,phoneWeight:getComputedStyle(document.querySelector('.header-phone')).fontWeight,logoGap:document.querySelector('.primary-nav').getBoundingClientRect().left-document.querySelector('.brand').getBoundingClientRect().right}));
   results.push({route,...layout});
   for(const label of ['Flashings','Rainwater Systems','Louvre Systems','Architectural Features','Gutter Systems','Rainscreen Panels']){
@@ -32,14 +32,14 @@ const fs=require('fs');
   await page.getByRole('button',{name:'Send enquiry'}).click();
   const form=await page.locator('.form-result').isVisible();
   results.push({route,status:res.status(),brokenImages:images,formDemoResult:form});
-  for(const width of [390,320]){
+  for(const width of [1920,390,320]){
    await page.setViewportSize({width,height:844});await page.goto('http://127.0.0.1:8087/'+route+'.html',{waitUntil:'networkidle'});
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
-   await page.getByRole('button',{name:'Open navigation'}).click();
-   const menu=await page.locator('#mobile-nav').isVisible();
-   await page.getByRole('button',{name:'Open navigation'}).click();
+   let menu=null;
+   if(width<1101){await page.getByRole('button',{name:'Open navigation'}).click();menu=await page.locator('#mobile-nav').isVisible();await page.getByRole('button',{name:'Open navigation'}).click();}
+   const containerWidth=await page.locator('.wrap').first().evaluate(el=>Math.round(el.getBoundingClientRect().width));
    await page.screenshot({path:'qa/'+route+'-'+width+'.png',fullPage:true});
-   results.push({route,width,overflow,mobileMenu:menu});
+   results.push({route,width,containerWidth,overflow,mobileMenu:menu});
   }
   await page.setViewportSize({width:1440,height:1050});
  }
