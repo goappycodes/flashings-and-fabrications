@@ -8,7 +8,7 @@ export function buildThird(out,form){
  page=page.replace('</header>','</header>'+serviceNav);
  page=page.replace(/<main id="main">[\s\S]*?<\/main>/,`<main id="main">${directionC({form})}</main>`);
  page=page.replace('<link href="styles.css"','<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet"><link href="styles.css"');
- page=page.replace('<link href="type-system.css" rel="stylesheet">','<link href="type-system.css" rel="stylesheet"><link href="direction-c.css" rel="stylesheet">');
+ page=page.replace('<link href="type-system.css" rel="stylesheet">','<link href="type-system.css" rel="stylesheet"><link href="direction-c.css?v=header-separation-1" rel="stylesheet">');
  page=page.replace('Our workshop</a>','Our workshop</a>');
  writeFileSync(new URL('bold.html',out),page);
  let index=readFileSync(new URL('index.html',out),'utf8');
