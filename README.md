@@ -9,6 +9,8 @@ Three responsive homepage design directions for the Littlehampton sheet-metal fa
 
 The original two use Noto Sans. The third adds Montserrat 900 for major headings. All retain explicit service choices, verified local contact details, project examples and demonstration enquiry forms. Desktop containers reach 1,680px on larger screens. Forms validate in the browser and do not send data or files.
 
+Each homepage hero crossfades between three images, with a pause control and a static opening image for reduced-motion preferences. The bold direction uses larger square product images and three service cards per row on wide desktops, reducing to two and then one on smaller screens.
+
 ## Development
 
 Run `npm run build` with Node.js to regenerate the HTML from `build.mjs`, `build-third.mjs`, `direction-b.mjs` and `direction-c.mjs`. Styles and browser behaviour live in `dist/styles.css`, `dist/type-system.css`, `dist/direction-c.css` and `dist/site.js`.

@@ -11,3 +11,10 @@
 .foundry-services-bar{background:#12394b;color:#fff;border-block:1px solid #35596b}.foundry-services-bar>nav{display:flex}.foundry-services-bar button{display:flex;flex:1 0 auto;align-items:center;justify-content:center;gap:0;text-align:center;padding:17px 12px;min-height:58px;border-right:1px solid #ffffff26;line-height:1.4;white-space:nowrap}.foundry-services-bar button:first-child{border-left:1px solid #ffffff26}.foundry-services-bar button:hover{background:#244d61}.foundry-services-bar button>span{display:none}
 @media(max-width:1350px){.foundry-services-bar>nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.foundry-services-bar button{white-space:normal;border-bottom:1px solid #ffffff26}.foundry-services-bar button:nth-child(5){border-left:1px solid #ffffff26}}
 @media(max-width:650px){.foundry-services-bar>nav{width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}.foundry-services-bar button{padding:13px 17px;min-height:58px}.foundry-services-bar button:first-child,.foundry-services-bar button:nth-child(5){border-left:0}.foundry-services-bar button:nth-child(even){border-right:0}}
+.foundry-service-list button>img{width:128px;height:128px}
+@media(min-width:1250px){.foundry-service-list{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:32px}.foundry-service-list button{gap:20px;min-width:0}}
+@media(min-width:1101px){.foundry .site-header nav.primary-nav{flex:1;justify-content:center}}
+@media(max-width:1200px){.foundry-service-list button>img{width:100px;height:100px}}
+@media(max-width:900px){.foundry-service-list button>img{width:86px;height:86px}}
+@media(max-width:650px){.foundry-service-list button>img{width:88px;height:88px}}
+@media(max-width:370px){.foundry-service-list button>img{width:72px;height:72px}}
