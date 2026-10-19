@@ -2,3 +2,5 @@ qa/
 *.tgz
 *.tar.gz
 __pycache__/
+.vercel/
+node_modules/

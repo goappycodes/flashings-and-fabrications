@@ -1,10 +1,12 @@
 const menu = document.querySelector('.menu-toggle');
 const mobile = document.querySelector('#mobile-nav');
-menu.addEventListener('click', () => { const opened=menu.getAttribute('aria-expanded')==='true'; menu.setAttribute('aria-expanded', String(!opened)); mobile.hidden=opened; });
-mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobile.hidden=true;menu.setAttribute('aria-expanded','false');}));
+const setMobileMenu=open=>{mobile.hidden=!open;menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');menu.querySelector('span').textContent=open?'×':'☰';};
+menu.addEventListener('click',()=>setMobileMenu(mobile.hidden));
+mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMobileMenu(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!mobile.hidden){setMobileMenu(false);menu.focus();}});
 const dialog = document.querySelector('.detail-dialog');
 document.querySelectorAll('[data-detail]').forEach(button=>button.addEventListener('click',()=>{
- if(mobile.contains(button)){mobile.hidden=true;menu.setAttribute('aria-expanded','false');}
+ if(mobile.contains(button))setMobileMenu(false);
  const d=window.FFS_DETAILS[button.dataset.detail];
  const content=document.querySelector('.dialog-content');
  content.replaceChildren();
