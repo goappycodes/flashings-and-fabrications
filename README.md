@@ -18,15 +18,7 @@ For a local preview, serve `dist` with any static HTTP server. For example, `pyt
 
 ## Deploy on Vercel
 
-Import `goappycodes/flashings-and-fabrications` and keep the Root Directory at the repository root (`.`). The GitHub repository root contains this project directly; do not enter `homepage-directions` in Vercel.
-
-The included `vercel.json` selects the Other framework preset, skips dependency installation (there are no dependencies), runs `npm run build`, and serves `dist`. Clean URLs provide `/dark` and `/bold`; `/` is the two-direction comparison page. No environment variables are needed. The light direction has been removed.
-
-The phone menu includes all eight products and services; the separate services strip is hidden on phones. Each service opens its existing details panel.
-
-Vercel configuration reference: https://vercel.com/docs/project-configuration/vercel-json
-
-The Python `prepare-white-logo.py` utility generates an exact transparent white SVG variant from the original logo. It needs Pillow only to read the source dimensions. The final SVG is already included in `dist/assets`.
+The Vercel project now deploys the new website in `website/` (Root Directory `website`, framework Next.js). The `vercel.json` here and in `website/` both set the Next.js install and build commands; keep them in sync. The concepts in this folder are kept for reference and are no longer deployed. To preview them locally, run `npm run build` here and serve `dist`.
 
 ## Assets and publication
 
