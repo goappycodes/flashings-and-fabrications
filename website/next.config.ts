@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
     // The old concept URLs (/dark, /bold, /final, /final-v2) were shared before the rename.
     return [
       { source: "/home-1", destination: "/", permanent: false },
-      ...[2, 3, 4, 5].map((n) => ({
+      ...[2, 3, 4, 5, 6].map((n) => ({
         source: `/home-${n}`,
         destination: `/home-${n}/index.html`,
         permanent: false,
